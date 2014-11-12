@@ -4,7 +4,7 @@ name    = "tailrec"
 version = "0.0.0"
 authors = [ "Darin Morrison <darinmorrison+epsilonz@gmail.com>" ]
 
-[dependencies.free_macros]
+[dependencies.free]
 branch = "macros"
 git    = "https://github.com/darinmorrison/free.rs"
 

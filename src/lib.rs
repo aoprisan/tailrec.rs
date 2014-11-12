@@ -9,6 +9,6 @@
 #![feature(unboxed_closures)]
 
 #[phase(link, plugin)]
-extern crate free_macros;
+extern crate free;
 
 pub mod trampoline;
