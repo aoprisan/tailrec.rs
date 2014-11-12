@@ -5,8 +5,7 @@ version = "0.0.0"
 authors = [ "Darin Morrison <darinmorrison+epsilonz@gmail.com>" ]
 
 [dependencies.free]
-branch = "macros"
-git    = "https://github.com/darinmorrison/free.rs"
+git = "https://github.com/epsilonz/free.rs"
 
 [dev-dependencies.quickcheck]
 git = "https://github.com/BurntSushi/quickcheck"
