@@ -1,0 +1,15 @@
+[package]
+
+name    = "tailrec"
+version = "0.0.0"
+authors = [ "Darin Morrison <darinmorrison+epsilonz@gmail.com>" ]
+
+[dependencies.free_macros]
+branch = "macros"
+git    = "https://github.com/darinmorrison/free.rs"
+
+[dev-dependencies.quickcheck]
+git = "https://github.com/BurntSushi/quickcheck"
+
+[dev-dependencies.quickcheck_macros]
+git = "https://github.com/BurntSushi/quickcheck"
