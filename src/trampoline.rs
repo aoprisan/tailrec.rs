@@ -17,12 +17,12 @@ impl<'a, X:'a> Trampoline<'a, X> {
 
 #[inline(always)]
 pub fn done<'a, X>(a: X) -> Trampoline<'a, X> {
-    Pure(a)
+    Leaf(a)
 }
 
 #[inline(always)]
 pub fn more<'a, X>(ma:Lazy<'a, Trampoline<'a, X>>) -> Trampoline<'a, X> {
-    Roll(map(ma, |:tx: Trampoline<'a, _>| box tx))
+    Nest(map(ma, |:tx: Trampoline<'a, _>| box tx))
 }
 
 #[cfg(test)]
