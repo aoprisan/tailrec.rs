@@ -7,8 +7,8 @@ authors = [ "Darin Morrison <darinmorrison+epsilonz@gmail.com>" ]
 [dependencies.free]
 git = "https://github.com/epsilonz/free.rs"
 
-[dev-dependencies.num]
-git = "https://github.com/rust-lang/num"
+# [dev-dependencies.num]
+# git = "https://github.com/rust-lang/num"
 
 # [dev-dependencies.quickcheck]
 # git = "https://github.com/BurntSushi/quickcheck"

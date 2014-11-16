@@ -25,31 +25,31 @@ pub fn more<'a, X>(ma:Lazy<'a, Trampoline<'a, X>>) -> Trampoline<'a, X> {
     Nest(map(ma, |:tx: Trampoline<'a, _>| box tx))
 }
 
-#[cfg(test)]
-mod tests {
-    extern crate num;
-
-    use self::num::BigInt;
-    use super::{
-        Trampoline,
-        done,
-        more,
-    };
-
-    fn factorial<'a>(n:uint, acc:BigInt) -> Trampoline<'a, BigInt> {
-        if n <= 2 {
-            done(acc)
-        } else {
-            let nb: BigInt = FromPrimitive::from_uint(n).unwrap();
-            more(box move |:| {
-                factorial(n - 1, nb * acc)
-            })
-        }
-    }
-
-    #[test]
-    fn welp() {
-        let acc: BigInt = FromPrimitive::from_uint(1u).unwrap();
-        println!("{}", factorial(1500, acc).run())
-    }
-}
+// #[cfg(test)]
+// mod tests {
+//     extern crate num;
+//
+//     use self::num::BigInt;
+//     use super::{
+//         Trampoline,
+//         done,
+//         more,
+//     };
+//
+//     fn factorial<'a>(n:uint, acc:BigInt) -> Trampoline<'a, BigInt> {
+//         if n <= 2 {
+//             done(acc)
+//         } else {
+//             let nb: BigInt = FromPrimitive::from_uint(n).unwrap();
+//             more(box move |:| {
+//                 factorial(n - 1, nb * acc)
+//             })
+//         }
+//     }
+//
+//     #[test]
+//     fn welp() {
+//         let acc: BigInt = FromPrimitive::from_uint(1u).unwrap();
+//         println!("{}", factorial(1500, acc).run())
+//     }
+// }
