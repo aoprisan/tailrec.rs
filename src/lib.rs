@@ -4,11 +4,8 @@
 #![license = "MIT"]
 #![doc(html_root_url = "http://www.rust-ci.org/epsilonz/tailrec.rs/doc/tailrec/")]
 
-#![feature(overloaded_calls)]
-#![feature(phase)]
-#![feature(unboxed_closures)]
+#![feature(globs)]
 
-#[phase(link, plugin)]
 extern crate free;
 
 pub mod trampoline;
