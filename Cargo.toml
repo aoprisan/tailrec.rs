@@ -1,8 +1,14 @@
 [package]
 
-name    = "tailrec"
+name = "tailrec"
 version = "0.0.0"
 authors = [ "Darin Morrison <darinmorrison+epsilonz@gmail.com>" ]
+description = "Monadic trampolines for stackless recursion in Rust"
+documentation = "http://www.rust-ci.org/epsilonz/tailrec.rs/doc/tailrec/"
+keywords = ["functional-programming", "monads", "stackless", "trampolines", "tail-recursion"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/epsilonz/tailrec.rs"
 
 [dependencies.free]
 git = "https://github.com/epsilonz/free.rs"
