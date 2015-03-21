@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 extern crate tailrec;
 use tailrec::TailRec;
 
@@ -14,9 +16,9 @@ fn iterate(n: u64) {
 fn incr(n: u64, m: u64) -> u64 {
     Acc { res: 1u64, lim: m }.tailrec(|xs| {
         match xs {
-            Acc { res: acc, lim: 0u64 } => { Err(acc) }
-            Acc { res: acc, lim: lim  } => {
-                let (lhs, rhs) = (acc + 1, lim - 1);
+            Acc { res, lim: 0u64 } => { Err(res) }
+            Acc { res, lim  } => {
+                let (lhs, rhs) = (res + 1, lim - 1);
                 println!("{:0>5}, {:0>5}", lhs, rhs);
                 Ok(Acc { res: lhs, lim: rhs })
             }

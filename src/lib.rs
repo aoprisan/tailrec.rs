@@ -1,5 +1,3 @@
-#![allow(unused)]
-
 pub trait TailRec: Sized {
     #[inline]
     fn tailrec<B, F>(self, f: F) -> B where F: Fn(Self) -> Result<Self, B> {
