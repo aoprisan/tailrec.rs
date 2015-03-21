@@ -3,7 +3,7 @@
 name = "tailrec"
 version = "0.0.3"
 authors = [ "Darin Morrison <darinmorrison+epsilonz@gmail.com>" ]
-description = "Monadic trampolines for stackless recursion in Rust"
+description = "Trait-based stack-safe recursion in Rust"
 documentation = "http://www.rust-ci.org/epsilonz/tailrec.rs/doc/tailrec/"
 keywords = ["functional", "monads", "recursion", "stackless", "trampolines"]
 license = "MIT"
