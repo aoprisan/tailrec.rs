@@ -25,6 +25,20 @@ fn incr(n: u64, m: u64) -> u64 {
 }
 
 #[inline]
+fn incr_ref_mut(n: u64, m: u64) -> u64 {
+    Acc { res: 1u64, lim: m }.rec_ref_mut(|acc| {
+        if acc.lim == 0 {
+            return Ok(acc.res)
+        } else {
+            acc.res += 1;
+            acc.lim -= 1;
+            println!("{:0>5}, {:0>5}", acc.res, acc.lim);
+            return Err(acc)
+        }
+    })
+}
+
+#[inline]
 fn mutual(n: u64) -> bool {
     Ok(n).rec(|acc| match acc {
         Ok(v) => { even(v) }
@@ -55,4 +69,5 @@ fn test() {
     println!("{:0>5}", incr(0u64, ::std::u16::MAX as u64));
     mutual(::std::u16::MAX as u64);
     iterate(::std::u16::MAX as u64);
+    println!("{:0>5}", incr_ref_mut(0u64, ::std::u16::MAX as u64));
 }
