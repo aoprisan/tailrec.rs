@@ -1,6 +1,6 @@
 # tailrec.rs
 
-Monadic trampolines for stackless recursion in Rust
+Trait-based stackless recursion in Rust
 
 [![build status](https://api.travis-ci.org/epsilonz/tailrec.rs.svg?branch=master)](https://travis-ci.org/epsilonz/tailrec.rs)
 
