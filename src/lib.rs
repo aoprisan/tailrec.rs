@@ -1,10 +1,10 @@
 pub trait TailRec: Sized {
     #[inline]
-    fn tailrec<B, F>(self, f: F) -> B where F: Fn(Self) -> Result<Self, B> {
-        let mut res = f(self);
-        loop { match res {
-            Ok (v) => { res = f(v); }
-            Err(e) => { return e }
+    fn tailrec<B, F>(self, iterate: F) -> B where F: Fn(Self) -> Result<B, Self> {
+        let mut state = iterate(self);
+        loop { match state {
+            Ok (done) => { return done }
+            Err(more) => { state = iterate(more); }
         }}
     }
 }
