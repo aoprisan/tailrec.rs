@@ -11,8 +11,3 @@ readme = "README.md"
 repository = "https://github.com/epsilonz/tailrec.rs"
 
 [dependencies]
-
-free = "*"
-
-# [dev-dependencies.num]
-# git = "https://github.com/rust-lang/num"
