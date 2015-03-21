@@ -1,11 +1,14 @@
-#![crate_name="tailrec"]
-#![crate_type="lib"]
+#![allow(unused)]
 
-#![license = "MIT"]
-#![doc(html_root_url = "http://www.rust-ci.org/epsilonz/tailrec.rs/doc/tailrec/")]
+pub trait TailRec: Sized {
+    #[inline]
+    fn tailrec<B, F>(self, f: F) -> B where F: Fn(Self) -> Result<Self, B> {
+        let mut res = f(self);
+        loop { match res {
+            Ok (v) => { res = f(v); }
+            Err(e) => { return e }
+        }}
+    }
+}
 
-#![feature(globs)]
-
-extern crate free;
-
-pub mod trampoline;
+impl<A> TailRec for A {}
